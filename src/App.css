@@ -6,26 +6,21 @@
   height: 40vmin;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+body {
+  font-family: 'Saira Stencil One', sans-serif
 }
-
-.App-link {
-  color: #09d3ac;
+.heading {
+  font-weight: 700;
+}
+.subheading {
+  font-weight: 300;
 }
 
 .module {
   background: 
     linear-gradient(
-      rgba(0, 0, 0, 0.6),
-      rgba(0, 0, 0, 0.6)
+      rgb(83, 2, 2),
+      rgba(224, 5, 5)
     );
     /* Set rules to fill background */
     min-height: 100%;
@@ -43,7 +38,7 @@
 
 .column {
   flex: 50;
-  padding: 20px;
+  margin: 20px;
 }
 
 .row {
@@ -56,8 +51,13 @@
 
 .fg-text {
   font-size: 2rem;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 900;
+  font-weight: 400;
   color: white;
-  margin: 0;
+  padding: 30px;
+}
+
+.fg-text-bold {
+  font-size: 3rem;
+  font-weight: 50;
+  color: yellow;
 }

@@ -18,7 +18,7 @@ export class App extends Component {
   
   render() {
   let countDownDate = new Date("Oct 4, 2019 0:00:00").getTime();
-  let now = new Date().getTime();
+  let now = this.state.time;
 
   // Find the distance between now and the count down date
   let distance = countDownDate - now;
@@ -34,31 +34,46 @@ export class App extends Component {
    if (distance > 0) {
     content = (
       <>
-      MARTY turns 6 in...
+      <p className="fg-text-bold">
+        MARTY turns 6 in...
+      </p>
       <p></p>
         {days} days 
       <p></p>
         {hours} hours 
       <p></p>
-        {minutes} mins
+        {minutes} minutes
       <p></p>
-        {seconds} secs
+        {seconds} seconds
       </>)
     } else { 
+      console.log('now: ', now);
+      if ( (now / 1000) % 2 === 0) {
       content = (
         <>
-          HAPPY BIRTHDAY, MARTY!
+          <p className="fg-text-bold" style={{color: 'white'}}>
+          HAPPY BIRTHDAY, MARTY!!!
+          </p>
         </>)
+      } else {
+        content = (
+          <>
+            <p className="fg-text-bold" style={{color: 'yellow'}}>
+            HAPPY BIRTHDAY, MARTY!!!
+            </p>
+          </>)
+      }
+
     }
 
   return (
   <div className="module">
     <div className="centered">
-      <div class="row">
-        <div class="column">
-          <img src={marty}></img>
+      <div className="row">
+        <div className="column">
+            <img src={marty} style = {{height: window.innerHeight + 'px'}}></img>
         </div>
-        <div class="column">
+        <div className="column">
           <div className="fg-text">
               {content}
           </div>
