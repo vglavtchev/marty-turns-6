@@ -33,7 +33,7 @@ export class App extends Component {
 
     // Find the distance between now and the count down date
     let distance = countDownDate - now;
-    let isBirthday = true;// (countDownDate - now) < 0;
+    let isBirthday = (countDownDate - now) < 0;
 
     // Time calculations for days, hours, minutes and seconds
     let days = Math.floor(distance / (1000 * 60 * 60 * 24));
