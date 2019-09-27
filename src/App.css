@@ -41,19 +41,23 @@
     left: 0;
 }
 
+.column {
+  flex: 50;
+  padding: 20px;
+}
+
+.row {
+  display: flex;
+}
+
 .bg-image {
-    background: url(static/marty_db.jpg) no-repeat center center fixed;
-    background-size: 100% 100%; 
+  background: url(static/marty_db.jpg) no-repeat center center fixed;
 }
 
 .fg-text {
+  font-size: 2rem;
   font-family: 'Roboto', sans-serif;
   font-weight: 900;
   color: white;
   margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  font-size: 2rem;
-  transform: translate(-50%, -50%);
 }

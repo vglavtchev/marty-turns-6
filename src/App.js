@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import marty from "./static/marty_db.jpg";
 import './App.css';
 
 export class App extends Component {
@@ -35,7 +36,13 @@ export class App extends Component {
       <>
       MARTY turns 6 in...
       <p></p>
-        {days} days : {hours} hours : {minutes} minutes : {seconds} seconds
+        {days} days 
+      <p></p>
+        {hours} hours 
+      <p></p>
+        {minutes} mins
+      <p></p>
+        {seconds} secs
       </>)
     } else { 
       content = (
@@ -46,10 +53,17 @@ export class App extends Component {
 
   return (
   <div className="module">
-    <div className="bg-image">
-    </div>
-    <div className="fg-text">
-        {content}
+    <div className="centered">
+      <div class="row">
+        <div class="column">
+          <img src={marty}></img>
+        </div>
+        <div class="column">
+          <div className="fg-text">
+              {content}
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   );
