@@ -17,73 +17,74 @@ export class App extends Component {
   }
   
   render() {
-  let countDownDate = new Date("Oct 4, 2019 0:00:00").getTime();
-  let now = this.state.time;
+    let countDownDate = new Date("Oct 4, 2019 0:00:00").getTime();
+    let now = this.state.time;
 
-  // Find the distance between now and the count down date
-  let distance = countDownDate - now;
+    // Find the distance between now and the count down date
+    let distance = countDownDate - now;
 
-  // Time calculations for days, hours, minutes and seconds
-  let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    // Time calculations for days, hours, minutes and seconds
+    let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  let content;
-  
-   if (distance > 0) {
-    content = (
-      <>
-      <p className="fg-text-bold">
-        MARTY turns 6 in...
-      </p>
-      <p></p>
-        {days} days 
-      <p></p>
-        {hours} hours 
-      <p></p>
-        {minutes} minutes
-      <p></p>
-        {seconds} seconds
-      </>)
-    } else { 
-      console.log('now: ', now);
-      if ( (now / 1000) % 2 === 0) {
+    let content;
+    
+    if (distance > 0) {
       content = (
         <>
-          <p className="fg-text-bold" style={{color: 'white'}}>
-          HAPPY BIRTHDAY, MARTY!!!
-          </p>
+        <p className="fg-text-bold">
+          MARTY turns 6 in...
+        </p>
+        <p></p>
+          {days} days 
+        <p></p>
+          {hours} hours 
+        <p></p>
+          {minutes} minutes
+        <p></p>
+          {seconds} seconds
         </>)
-      } else {
-        content = (
-          <>
-            <p className="fg-text-bold" style={{color: 'yellow'}}>
-            HAPPY BIRTHDAY, MARTY!!!
-            </p>
-          </>)
+      } else { 
+        console.log('now: ', now);
+        if ( (now / 1000).toFixed(0) % 2 == 0) {
+          console.log('even:', now / 1000);
+          content = (
+            <>
+              <p className="fg-text-bold" style={{color: 'yellow'}}>
+              HAPPY BIRTHDAY, MARTY!!!
+              </p>
+            </>)
+        } else {
+          console.log('odd:', now / 1000);
+          content = (
+            <>
+              <p className="fg-text-bold" style={{color: 'white'}}>
+              HAPPY BIRTHDAY, MARTY!!!
+              </p>
+            </>)
+        }
+
       }
 
-    }
-
-  return (
-  <div className="module">
-    <div className="centered">
-      <div className="row">
-        <div className="column">
-            <img src={marty} style = {{height: window.innerHeight + 'px'}}></img>
-        </div>
-        <div className="column">
-          <div className="fg-text">
-              {content}
+    return (
+      <div className="module">
+        <div className="centered">
+          <div className="row">
+            <div className="column">
+                <img src={marty} style = {{height: window.innerHeight + 'px'}}></img>
+            </div>
+            <div className="column">
+              <div className="fg-text">
+                  {content}
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-  );
+    );
+  }
 }
-}
-
 
 export default App;
