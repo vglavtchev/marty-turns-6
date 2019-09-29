@@ -1,8 +1,23 @@
 import React, { useState, useEffect } from "react";
-import marty from "./static/marty_db.jpg";
+import img0 from "./static/0.jpg";
+import img1 from "./static/1.jpg";
+import img2 from "./static/2.jpg";
+import img3 from "./static/3.jpg";
+import img4 from "./static/4.jpg";
+
 import './App.css';
 
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+const imgArray = [img0, img1, img2, img3, img4];
+let marty = imgArray[getRandomInt(0,4)];
+
 function App(props) {
+
   // Hooks for time and window size.
   const [time, setTime] = useState(Date.now());
   const {width} = useWindowSize();

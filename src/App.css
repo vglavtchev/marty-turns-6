@@ -45,10 +45,6 @@ body {
   display: flex;
 }
 
-.bg-image {
-  background: url(static/marty_db.jpg) no-repeat center center fixed;
-}
-
 .fg-text {
   font-size: 2rem;
   font-weight: 400;
