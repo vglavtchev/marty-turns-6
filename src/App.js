@@ -32,7 +32,7 @@ function App(props) {
 
   const isMobile = width <= 800;
 
-  let countDownDate = new Date("Oct 4, 2019 0:00:00").getTime();
+  let countDownDate = new Date("Oct 4, 2020 0:00:00").getTime();
   let now = time;
 
   // Find the distance between now and the count down date
@@ -66,7 +66,7 @@ function App(props) {
     return (
       <>
       <p className="fg-text-bold" style={boldStyle}>
-        MARTY turns 6 in...
+        MARTY turns 7 in...
       </p>
       <p style={regularStyle}>
         {days} days 
