@@ -1,5 +1,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Modern Node.js Compatibility (Node 17+)
+
+This project uses an older version of `react-scripts`. If you are using Node.js 17 or later, you may encounter an `ERR_OSSL_EVP_UNSUPPORTED` error. The `npm start` and `npm run build` scripts have been updated to automatically use the `--openssl-legacy-provider` flag to resolve this.
+
 ## Available Scripts
 
 In the project directory, you can run:
